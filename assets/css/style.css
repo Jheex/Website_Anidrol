@@ -1171,61 +1171,271 @@ body {
     }
 }
 
-/* 6. CARROSSEL DE IMAGENS */
+/* ==========================================================================
+   CARROSSEL DE IMAGENS (SOBRE)
+   ========================================================================== */
 .gallery-section {
     padding: 80px 0;
-    background-color: #f9f9f9;
+    background-color: var(--cinza-fundo);
 }
 
-.swiper-container {
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 50px;
-}
-
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 700px; /* Largura do slide central */
-    height: 450px;
-    border-radius: 20px;
-    overflow: hidden;
+.carousel-container {
     position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--laranja-anidrol);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Isso impede que imagens .png ou .jpg de proporções diferentes fiquem esticadas */
+    display: block;
+}
+
+.carousel-btn:hover { background: var(--laranja-escuro); }
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+@media (max-width: 768px) {
+    .carousel-slide img { height: 300px; }
+}
+
+/* ==========================================================================
+   TELA DE PRODUTOS - PRODUTOS.PHP
+   ========================================================================== */
+.product-search {
+    padding: 40px 0;
+    background: var(--cinza-fundo);
+    margin-top: -50px; /* Faz a busca "subir" um pouco sobre o hero */
+    position: relative;
+    z-index: 20;
+}
+
+.search-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    background: var(--branco);
+    padding: 10px;
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.search-box input {
+    flex: 1;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    outline: none;
 }
 
-/* Legenda flutuante no slide */
-.slide-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 10px;
+.search-box button {
+    background: var(--laranja-anidrol);
+    color: var(--branco);
+    border: none;
+    padding: 0 30px;
+    border-radius: 8px;
     font-weight: 700;
-    color: var(--texto-escuro);
-    font-size: 0.9rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Customização dos botões (Laranja Anidrol) */
-.swiper-button-next, .swiper-button-prev {
-    color: var(--laranja-anidrol) !important;
+.search-box button:hover {
+    background: var(--laranja-escuro);
 }
 
-.swiper-pagination-bullet-active {
-    background: var(--laranja-anidrol) !important;
+.products-grid-section {
+    padding: 100px 0;
 }
 
+/* ==========================================================================
+   PRODUTOS: BARRA DE BUSCA
+   ========================================================================== */
+.product-search {
+    padding: 40px 0;
+    background: #f8f9fa;
+    margin-top: -50px; /* Efeito de sobreposição no Hero */
+    position: relative;
+    z-index: 10;
+}
+
+.search-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.search-box button {
+    background: #ff6600; /* Laranja Anidrol */
+    color: #fff;
+    border: none;
+    padding: 0 35px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box button:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   PRODUTOS: TABELA E LISTAGEM
+   ========================================================================== */
+.table-responsive {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.product-table thead {
+    background: #2c3e50; /* Azul escuro industrial para contraste */
+    color: #ffffff;
+}
+
+.product-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.product-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    vertical-align: middle;
+}
+
+.product-name strong {
+    color: #2c3e50;
+    font-size: 15px;
+}
+
+/* Badge estilizada para o Número CAS */
+.badge-cas {
+    background: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid #dee2e6;
+}
+
+/* ==========================================================================
+   PRODUTOS: BOTÕES E INTERAÇÃO
+   ========================================================================== */
+.btn-table {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #fff;
+    color: #ff6600;
+    border: 1px solid #ff6600;
+    border-radius: 8px;
+    margin: 0 3px;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn-table:hover {
+    background: #ff6600;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Zebra Stripes: Cores alternadas para leitura fácil */
+.product-table tbody tr:nth-child(even) {
+    background: #fcfcfc;
+}
+
+.product-table tbody tr:hover {
+    background: #fff9f5; /* Leve destaque laranja no hover */
+}
+
+/* Ajuste Responsivo para Celular */
 @media (max-width: 768px) {
-    .swiper-slide {
-        width: 90%;
-        height: 300px;
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    .search-box button {
+        width: 100%;
+        padding: 15px;
+        justify-content: center;
     }
 }
+

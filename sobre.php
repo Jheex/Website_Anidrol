@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="assets/img/hero-bg.jpg" alt="Pátio Industrial Anidrol">
+                    <img src="assets/img/hero/hero-bg.jpg" alt="Pátio Industrial Anidrol">
                 </div>
             </div>
         </div>
@@ -139,49 +139,37 @@
     <section class="gallery-section">
         <div class="container">
             <div class="section-header text-center">
-                <span class="sub-title">Infraestrutura</span>
-                <h2>Nosso <span>Ambiente</span></h2>
+                <span class="sub-title">Nossa Infraestrutura</span>
+                <h2>Tecnologia e <span>Segurança</span></h2>
             </div>
-            
-            <div class="swiper-container mySwiper">
-                <div class="swiper-wrapper">
+
+            <div class="carousel-container">
+                <div class="carousel-track">
                     <?php
-                    // Define o caminho da pasta (ajustado para sua estrutura)
+                    // Caminho para a pasta de imagens
                     $dir = "assets/img/carrossel/";
                     
-                    // Busca por qualquer arquivo com extensões de imagem comuns
-                    // {*.jpg,*.jpeg,*.png,*.webp,*.JPG} busca todos esses formatos
-                    $images = glob($dir . "{*.jpg,*.jpeg,*.png,*.webp,*.JPG,*.PNG}", GLOB_BRACE);
+                    // Busca arquivos com extensões comuns (jpg, png, webp, jpeg, gif)
+                    $images = glob($dir . "{*.jpg,*.JPG,*.png,*.PNG,*.webp,*.jpeg,*.gif}", GLOB_BRACE);
 
                     if ($images) {
-                        foreach($images as $image) {
-                            // Pega o nome do arquivo para usar como legenda (opcional)
-                            $caption = ucfirst(pathinfo($image, PATHINFO_FILENAME));
-                            ?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo $image; ?>" alt="<?php echo $caption; ?>">
-                                <div class="slide-caption"><?php echo str_replace('-', ' ', $caption); ?></div>
-                            </div>
-                            <?php
+                        foreach ($images as $image) {
+                            echo '<div class="carousel-slide">';
+                            echo '    <img src="' . $image . '" alt="Infraestrutura Anidrol">';
+                            echo '</div>';
                         }
                     } else {
-                        echo "<p class='text-center'>Nenhuma imagem encontrada na pasta.</p>";
+                        echo '<p style="padding: 20px; text-align: center;">Nenhuma imagem encontrada na pasta.</p>';
                     }
                     ?>
                 </div>
-                
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+
+                <button class="carousel-btn prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
-
-    
 </main>
 
+<script src="assets/js/script.js"></script>
 <?php include 'includes/footer.php'; ?>

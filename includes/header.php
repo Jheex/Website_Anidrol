@@ -31,8 +31,7 @@
                     <li><a href="index.php" class="active">Início</a></li>
                     <li><a href="sobre.php">Empresa</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
-                    <li><a href="#">Certificados</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="contato.php">Contato</a></li>
                 </ul>
             </nav>
 
