@@ -3,7 +3,7 @@
         <div class="footer-grid">
             <div class="footer-brand-section">
                 <div class="footer-logo-wrapper">
-                    <img src="assets/img/logo.png" alt="Anidrol Logo" class="footer-logo">
+                    <img src="assets/img/logo/logo.png" alt="Anidrol Logo" class="footer-logo">
                     <div class="brand-text">
                         <span class="brand-name">ANIDROL</span>
                         <span class="brand-sub">INDÚSTRIA QUÍMICA</span>

@@ -19,7 +19,7 @@
     <div class="container">
         <div class="header-wrapper">
             <a href="index.php" class="brand-container">
-                <img src="assets/img/logo.png" alt="Anidrol Logo" class="logo-img">
+                <img src="assets/img/logo/logo.png" alt="Anidrol Logo" class="logo-img">
                 <div class="brand-text">
                     <span class="brand-name">ANIDROL</span>
                     <span class="brand-sub">INDÚSTRIA QUÍMICA</span>
@@ -29,7 +29,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="index.php" class="active">Início</a></li>
-                    <li><a href="#">Empresa</a></li>
+                    <li><a href="sobre.php">Empresa</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
                     <li><a href="#">Certificados</a></li>
                     <li><a href="#">Contato</a></li>
