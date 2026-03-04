@@ -45,6 +45,7 @@
                 <h2>Excelência em cada <span>molécula</span></h2>
                 <p>Conheça nossas principais linhas de fornecimento técnico.</p>
             </div>
+
             <div class="categories-grid">
                 <div class="cat-card">
                     <i class="fa-solid fa-flask-vial"></i>
@@ -52,18 +53,22 @@
                     <p>Produtos com alto grau de pureza para análises laboratoriais rigorosas.</p>
                     <a href="#" class="link-orange">Saiba mais →</a>
                 </div>
+
                 <div class="cat-card">
                     <i class="fa-solid fa-industry"></i>
                     <h3>Insumos Industriais</h3>
                     <p>Matérias-primas químicas de qualidade superior para processos produtivos.</p>
                     <a href="#" class="link-orange">Saiba mais →</a>
                 </div>
+
                 <div class="cat-card">
                     <i class="fa-solid fa-vial-circle-check"></i>
                     <h3>Soluções Tituladas</h3>
                     <p>Soluções prontas para uso com fatoração precisa e padronizada.</p>
                     <a href="#" class="link-orange">Saiba mais →</a>
                 </div>
+            </div> <div class="categories-footer">
+                <a href="produtos.php" class="btn-primary">Visualizar Catálogo Completo</a>
             </div>
         </div>
     </section>
@@ -117,22 +122,6 @@
                         <h3>Gestão Ambiental</h3>
                         <p>Processos certificados pela ISO 14001, focados na redução de impactos e descarte responsável.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="environmental">
-        <div class="container">
-            <div class="env-grid">
-                <div class="env-image">
-                    <img src="assets/img/sustentabilidade.jpg" alt="Sustentabilidade Anidrol">
-                </div>
-                <div class="env-content">
-                    <span class="tagline">Sustentabilidade</span>
-                    <h2>Química Responsável</h2>
-                    <p>Nossos processos são otimizados para minimizar o impacto ambiental, seguindo as diretrizes da ISO 14001 e promovendo o descarte consciente de resíduos.</p>
-                    <a href="#" class="btn-outline-orange">Nossa Política de Qualidade</a>
                 </div>
             </div>
         </div>
