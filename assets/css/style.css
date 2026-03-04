@@ -1545,7 +1545,9 @@ body {
 /* ==========================================================================
    PÁGINA DE CONTATO (ESTILO INTEGRADO)
    ========================================================================== */
-.contact-section {
+
+
+   .contact-section {
     padding: 80px 0;
     background-color: var(--branco);
 }

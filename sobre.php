@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="assets/img/hero/hero-bg.jpg" alt="Pátio Industrial Anidrol">
+                    <img src="assets/img/carrossel/galpao.png" alt="Pátio Industrial Anidrol">
                 </div>
             </div>
         </div>
