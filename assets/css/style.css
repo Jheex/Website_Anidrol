@@ -119,20 +119,73 @@ body {
     width: 100%;
 }
 
-.btn-header-white {
-    background-color: var(--branco);
-    color: var(--laranja-anidrol);
-    text-decoration: none;
-    padding: 12px 22px;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 13px;
-    transition: 0.3s;
+/* 1. Ajuste do Item Pai */
+.navbar ul li.dropdown {
+    position: relative;
 }
 
-.btn-header-white:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    transform: translateY(-1px);
+/* 2. O Menu Suspenso (A caixa branca) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--branco);
+    min-width: 200px; /* Largura fixa para não ficar esticado */
+    padding: 15px 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    
+    /* Forçar os itens a ficarem em coluna */
+    display: flex;
+    flex-direction: column; 
+    
+    /* Esconder por padrão */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+
+/* 3. Ajuste dos Itens da Lista (li de dentro) */
+.dropdown-menu li {
+    width: 100%;
+    display: block; /* Garante que ocupa a linha toda */
+    padding: 0;
+    margin: 0;
+}
+
+/* 4. Estilo dos Links Internos */
+.dropdown-menu li a {
+    color: var(--texto-escuro) !important;
+    padding: 12px 25px !important;
+    display: block !important; /* Força o link a preencher o espaço */
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+/* 5. Efeito Hover no Link */
+.dropdown-menu li a:hover {
+    background-color: #f8f9fa;
+    color: var(--laranja-anidrol) !important;
+    padding-left: 35px !important; /* Efeito de deslize para a direita */
+}
+
+/* 6. Mostrar o menu ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px); /* Desce suavemente */
+}
+
+/* Remover a barrinha branca animada (after) nos itens do dropdown */
+.dropdown-menu li a::after {
+    display: none !important;
 }
 
 /* ==========================================================================
@@ -261,6 +314,56 @@ body {
     justify-content: space-between;
     font-size: 12px;
     color: #777;
+}
+
+/* ==========================================================================
+   BOTÃO WHATSAPP FLUTUANTE (MINIMALISTA)
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;  /* Largura e altura iguais para um círculo perfeito */
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float i {
+    font-size: 32px; /* Tamanho do ícone */
+}
+
+/* Efeito Hover */
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1) rotate(10deg); /* Leve aumento e inclinação */
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float {
+    animation: pulse-dot 2s infinite;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-float i {
+        font-size: 26px;
+    }
 }
 
 /* ==========================================================================
@@ -1439,3 +1542,113 @@ body {
     }
 }
 
+/* ==========================================================================
+   PÁGINA DE CONTATO (ESTILO INTEGRADO)
+   ========================================================================== */
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--branco);
+}
+
+.contact-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Sidebar de informações */
+.contact-sidebar {
+    background: var(--cinza-fundo);
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 5px solid var(--laranja-anidrol);
+}
+
+.contact-details-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.contact-details-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-details-list i {
+    color: var(--laranja-anidrol);
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.contact-details-list strong {
+    display: block;
+    color: var(--texto-escuro);
+    font-size: 0.9rem;
+}
+
+.contact-details-list p {
+    font-size: 1rem;
+    color: var(--texto-corpo);
+}
+
+/* Formulário Customizado */
+.anidrol-custom-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    background: #fcfcfc;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--laranja-anidrol);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.1);
+}
+
+/* Alertas de Status */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.alert.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.alert.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .contact-grid-layout {
+        grid-template-columns: 1fr;
+    }
+    .anidrol-custom-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}

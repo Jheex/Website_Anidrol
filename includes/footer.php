@@ -50,4 +50,7 @@
             </div>
         </div>
     </div>
+    <a href="https://wa.me/551140433555" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 </footer>

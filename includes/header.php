@@ -28,16 +28,19 @@
 
             <nav class="navbar">
                 <ul>
-                    <li><a href="index.php" class="active">Início</a></li>
+                    <li><a href="index.php">Início</a></li>
                     <li><a href="sobre.php">Empresa</a></li>
-                    <li><a href="produtos.php">Produtos</a></li>
+                    <li class="dropdown">
+                        <a href="produtos.php">Produtos <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="produtos.php?cat=materias-primas">Matérias Primas</a></li>
+                            <li><a href="produtos.php?cat=reagentes">Reagentes</a></li>
+                            <li><a href="produtos.php?cat=solucoes">Soluções</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contato.php">Contato</a></li>
                 </ul>
             </nav>
-
-            <div class="header-actions">
-                <a href="#" class="btn-header-white">Solicitar Orçamento</a>
-            </div>
         </div>
     </div>
 </header>
